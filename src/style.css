@@ -20,7 +20,7 @@ body {
   box-shadow: 5px 5px 15px 5px grey;
 }
 
-main {
+#main {
   width: 100%;
   height: auto;
   border: 1px solid #d3d3d3;
@@ -59,14 +59,17 @@ main {
   background-color: #ffff;
 }
 
+#addBtn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 /* List */
 #list {
   width: 100%;
   min-height: 50px;
   border-top: 1px solid #d3d3d3;
 }
-
-/* Items list with JavaScript */
 
 #clearBtn {
   width: 100%;
@@ -75,4 +78,45 @@ main {
   color: #a3a3a3;
   border: none;
   border-top: 1px solid #d3d3d3;
+}
+
+#clearBtn:hover {
+  cursor: pointer;
+  transform: scale(1.005);
+  color: black;
+}
+
+/* Items list with JavaScript */
+.divTask {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  height: 30px;
+  padding: 10px;
+  column-gap: 15px;
+}
+
+.divCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  font-family: 'Lato', sans-serif;
+}
+
+.edit {
+  background-color: #ffff;
+  border: none;
+  width: 37px;
+  height: 37px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.edit:hover {
+  cursor: move;
+  transform: scale(1.01);
 }
