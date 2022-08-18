@@ -1,4 +1,78 @@
-.hello {
-  color: red;
-  background: url('./icon.png');
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #e7e7e7;
+}
+
+/* position the start list */
+#position {
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45vw;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 5px 15px 5px grey;
+}
+
+main {
+  width: 100%;
+  height: auto;
+  border: 1px solid #d3d3d3;
+}
+
+#today {
+  font-size: 20px;
+  padding: 15px;
+  margin-left: 14px;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  column-gap: 3px;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  padding: 5px 1px;
+  border-top: 1px solid #d3d3d3;
+}
+
+#add {
+  font-size: 18px;
+  font-style: italic;
+  width: 85%;
+  height: 37px;
+  padding-left: 15px;
+  border: none;
+}
+
+#addBtn {
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  background-color: #ffff;
+}
+
+/* List */
+#list {
+  width: 100%;
+  min-height: 50px;
+  border-top: 1px solid #d3d3d3;
+}
+
+/* Items list with JavaScript */
+
+#clearBtn {
+  width: 100%;
+  height: 45px;
+  font-size: 18px;
+  color: #a3a3a3;
+  border: none;
+  border-top: 1px solid #d3d3d3;
 }
