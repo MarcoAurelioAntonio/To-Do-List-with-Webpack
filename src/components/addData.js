@@ -80,7 +80,7 @@ function loadData() {
         tooltipDiv.style.color = 'black';
 
         const data = JSON.parse(localStorage.getItem('data'));
-        data[idNumber].description = `${edited}`;
+        data[idNumber - 1].description = `${edited}`;
         localStorage.setItem('data', JSON.stringify(data));
       }
     });
