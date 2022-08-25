@@ -1,50 +1,44 @@
-/* import _ from 'lodash'; */
-/* import './style.css'; */
+import {
+  addText, loadData,
+} from './components/addData.js';
 
-const listArray = [
-  {
-    description: 'Help to mi Son to do hes homework',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Go to the grocery store',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Go for a run',
-    completed: false,
-    index: 2,
-  },
-];
+const addBtn = document.getElementById('addBtn');
+const clearAll = document.getElementById('clearBtn');
+const listArray = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
 
-const list = document.getElementById('list');
-window.addEventListener('load', () => {
-  for (let i = 0; i < listArray.length; i += 1) {
-    // task div
-    const div = document.createElement('div');
-    div.classList.add('divTask');
-    // check
-    const check = document.createElement('input');
-    check.setAttribute('type', 'checkbox');
-    check.classList.add('check');
-    // descrption
-    const p = document.createElement('p');
-    p.textContent = `${listArray[i].description}`;
-    p.classList.add('p');
-    // edit button TRICOLON
-    const edit = document.createElement('button');
-    edit.classList.add('edit');
-    edit.textContent = '⁝';
-    // appending p, check and tricolon
-    div.appendChild(check);
-    div.appendChild(p);
-    // div container
-    const divCont = document.createElement('div');
-    divCont.classList.add('divCont');
-    divCont.appendChild(div);
-    divCont.appendChild(edit);
-    list.appendChild(divCont);
+let id = 1;
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (addText.value !== '') {
+    const task = {
+      description: `${addText.value}`,
+      completed: false,
+      index: id,
+    };
+    listArray.push(task);
+    /* loadData(); */ // call to create the task element.
+
+    // Load from local sttorage
+    const tasks = localStorage.getItem('data')
+      ? JSON.parse(localStorage.getItem('data'))
+      : [];
+    tasks.push(task);
+    for (let i = 0; i < tasks.length; i += 1) {
+      tasks[i].index = i + 1;
+    }
+    localStorage.setItem('data', JSON.stringify(tasks));
   }
+  id += 1;
+  loadData();
+});
+
+clearAll.addEventListener('click', (e) => {
+  e.preventDefault();
+  const notDeleted = listArray.filter((x) => x.completed === false);
+  /* console.log(notDeleted); */
+  for (let i = 0; i < notDeleted.length; i += 1) {
+    notDeleted[i].index = i + 1;
+  }
+  localStorage.setItem('data', JSON.stringify(notDeleted));
+  loadData();
 });

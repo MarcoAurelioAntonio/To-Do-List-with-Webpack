@@ -39,7 +39,6 @@ body {
   align-items: center;
   width: 100%;
   height: 45px;
-  padding: 5px 1px;
   border-top: 1px solid #d3d3d3;
 }
 
@@ -50,9 +49,16 @@ body {
   height: 37px;
   padding-left: 15px;
   border: none;
+  margin-left: 3px;
+}
+
+#add:focus {
+  outline: none;
+  background-color: #d3d3d3;
 }
 
 #addBtn {
+  width: 15%;
   padding: 5px;
   font-size: 20px;
   border: none;
@@ -69,6 +75,7 @@ body {
   width: 100%;
   min-height: 50px;
   border-top: 1px solid #d3d3d3;
+  background-color: #d3d3d3;
 }
 
 #clearBtn {
@@ -87,36 +94,38 @@ body {
 }
 
 /* Items list with JavaScript */
-.divTask {
+.divCont {
+  background-color: #ffff;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 85%;
   height: 30px;
   padding: 10px;
   column-gap: 15px;
 }
 
-.divCont {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.p {
+.descrption {
+  width: 80%;
+  height: 35px;
   font-family: 'Lato', sans-serif;
-}
-
-.edit {
-  background-color: #ffff;
+  font-size: 18px;
   border: none;
-  width: 37px;
-  height: 37px;
-  font-size: 30px;
-  font-weight: 600;
 }
 
-.edit:hover {
+.descrption:focus {
+  outline: none;
+  font-weight: bold;
+}
+
+/* Tooltip EDIT button */
+.tooltip {
+  height: 37px;
+  width: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
   cursor: move;
-  transform: scale(1.01);
+  border: none;
+  background-color: #ffff;
 }
