@@ -1,3 +1,4 @@
+import './style.css';
 import {
   addText, loadData,
 } from './components/addData.js';
