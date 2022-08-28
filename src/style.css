@@ -50,6 +50,7 @@ body {
   padding-left: 15px;
   border: none;
   margin-left: 3px;
+  border-radius: 50px;
 }
 
 #add:focus {

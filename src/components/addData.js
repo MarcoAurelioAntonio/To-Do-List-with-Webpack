@@ -80,8 +80,12 @@ function loadData() {
         tooltipDiv.style.color = 'black';
 
         const data = JSON.parse(localStorage.getItem('data'));
-        data[idNumber].description = `${edited}`;
+        data[idNumber - 1].description = `${edited}`;
+        for (let i = 0; i < data.length; i += 1) {
+          data[i].index = i + 1;
+        }
         localStorage.setItem('data', JSON.stringify(data));
+        window.location.reload();
       }
     });
   }
