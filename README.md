@@ -29,7 +29,7 @@ Each task object should contain three keys:
 - **Webpack:** used as a bundle to compile JavaScript modules.
 
 ## 🌎 Live Demo:
-- [To Do List]()
+- [To Do List](https://marcoaurelioantonio.github.io/To-Do-List-with-Webpack/dist/)
 
 ### Setup
 1. Download the **Zip** file or clone the repo with:
